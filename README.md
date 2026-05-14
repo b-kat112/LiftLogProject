@@ -10,6 +10,6 @@ APIs: Exercises By API-Ninjas (https://rapidapi.com/apininjas/api/exercises-by-a
 
 Contact Email: bkatuboi@terpmail.umd.edu
 
-Deployed App Link: TO_BE_ADDED
+Deployed App Link: [TO_BE_ADDED](https://liftlogproject.onrender.com)
 
 AI Use: 1. ChatGPT
