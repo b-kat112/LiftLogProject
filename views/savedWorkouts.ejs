@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Saved Workouts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <h1>Saved Workouts</h1>
+
+        <% if (workouts.length === 0) { %>
+            <p>No workouts saved yet.</p>
+        <% } else { %>
+            <% workouts.forEach((workout) => { %>
+                <section class="card">
+                    <h2><%= workout.exerciseName %></h2>
+                    <p><strong>Muscle:</strong> <%= workout.muscleGroup %></p>
+                    <p><strong>Sets:</strong> <%= workout.sets %></p>
+                    <p><strong>Reps:</strong> <%= workout.reps %></p>
+                    <p><strong>Weight:</strong> <%= workout.weight %></p>
+                    <p><strong>Notes:</strong> <%= workout.notes %></p>
+
+                    <form action="/workouts/delete" method="post">
+                        <input type="hidden" name="workoutId" value="<%= workout._id %>">
+                        <button type="submit">Delete</button>
+                    </form>
+                </section>
+            <% }); %>
+        <% } %>
+
+        <a href="/">HOME</a>
+    </main>
+</body>
+</html>

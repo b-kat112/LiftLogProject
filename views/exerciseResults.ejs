@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Exercise Results</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <h1>Exercises for <%= muscle %></h1>
+
+        <% if (exercises.length === 0) { %>
+            <p>No exercises found.</p>
+        <% } else { %>
+            <% exercises.forEach((exercise) => { %>
+                <section class="card">
+                    <h2><%= exercise.name %></h2>
+                    <p><strong>Type:</strong> <%= exercise.type %></p>
+                    <p><strong>Muscle:</strong> <%= exercise.muscle %></p>
+                    <p><strong>Equipment:</strong> <%= exercise.equipment %></p>
+                    <p><strong>Difficulty:</strong> <%= exercise.difficulty %></p>
+                    <p><strong>Instructions:</strong> <%= exercise.instructions %></p>
+                </section>
+            <% }); %>
+        <% } %>
+
+        <a href="/exercises/search">Search Again</a><br>
+        <a href="/">HOME</a>
+    </main>
+</body>
+</html>
